@@ -1,0 +1,47 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="Views\Home\tables-regular.html" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <None Include="wwwroot\lib\Template\charts-chartjs.html" />
+    <None Include="wwwroot\lib\Template\components-accordions.html" />
+    <None Include="wwwroot\lib\Template\components-calendar.html" />
+    <None Include="wwwroot\lib\Template\components-carousel.html" />
+    <None Include="wwwroot\lib\Template\components-maps.html" />
+    <None Include="wwwroot\lib\Template\components-modals.html" />
+    <None Include="wwwroot\lib\Template\components-notifications.html" />
+    <None Include="wwwroot\lib\Template\components-pagination.html" />
+    <None Include="wwwroot\lib\Template\components-progress-bar.html" />
+    <None Include="wwwroot\lib\Template\components-scrollable-elements.html" />
+    <None Include="wwwroot\lib\Template\components-tabs.html" />
+    <None Include="wwwroot\lib\Template\components-tooltips-popovers.html" />
+    <None Include="wwwroot\lib\Template\dashboard-boxes.html" />
+    <None Include="wwwroot\lib\Template\elements-badges-labels.html" />
+    <None Include="wwwroot\lib\Template\elements-buttons-standard.html" />
+    <None Include="wwwroot\lib\Template\elements-cards.html" />
+    <None Include="wwwroot\lib\Template\elements-dropdowns.html" />
+    <None Include="wwwroot\lib\Template\elements-icons.html" />
+    <None Include="wwwroot\lib\Template\elements-list-group.html" />
+    <None Include="wwwroot\lib\Template\elements-navigation.html" />
+    <None Include="wwwroot\lib\Template\elements-utilities.html" />
+    <None Include="wwwroot\lib\Template\favicon.ico" />
+    <None Include="wwwroot\lib\Template\forms-controls.html" />
+    <None Include="wwwroot\lib\Template\forms-layouts.html" />
+    <None Include="wwwroot\lib\Template\forms-validation.html" />
+  </ItemGroup>
+
+</Project>
