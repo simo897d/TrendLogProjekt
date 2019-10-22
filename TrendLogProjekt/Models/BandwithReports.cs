@@ -7,9 +7,10 @@ namespace TrendLogProjekt.Models
 {
     public class BandwithReports
     {
-        double ServerAllocation { get; set;}
-        double GeneratedLeads { get; set; }
-        double SubmittedTickets { get; set; }
-        double GeneratedLeads2 { get; set; }
+        public int ID { get; set; }
+        public int ServerAllocation { get; set;}
+        public int GeneratedLeads { get; set; }
+        public int SubmittedTickets { get; set; }
+        public int GeneratedLeads2 { get; set; }
     }
 }
