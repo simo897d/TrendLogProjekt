@@ -158,23 +158,26 @@
                                                 <li class="list-group-item">
                                                     <div class="widget-content p-0">
                                                         <div class="widget-content-wrapper">
+                                                                @for (int i = 0; i < 5; i++) {
                                                             <div class="widget-content-left mr-3">
-                                                                <img width="42" class="rounded-circle" src=@Model.TopAuthors[0].ImageLocation alt="">
+
+                                                                <img width="42" class="rounded-circle" src=@Model.TopAuthors[i].ImageLocation alt="">
                                                             </div>
                                                             <div class="widget-content-left">
-                                                                <div class="widget-heading">@Model.TopAuthors[0].Name</div>
-                                                                <div class="widget-subheading">@Model.TopAuthors[0].Occupation</div>
+                                                                <div class="widget-heading">@Model.TopAuthors[i].Name</div>
+                                                                <div class="widget-subheading">@Model.TopAuthors[i].Occupation</div>
                                                             </div>
                                                             <div class="widget-content-right">
                                                                 <div class="font-size-xlg text-muted">
                                                                     <small class="opacity-5 pr-1">$</small>
-                                                                    <span>@Model.TopAuthors[0].Money</span>
+                                                                    <span>@Model.TopAuthors[i].Money</span>
                                                                     <small class="text-danger pl-2">
                                                                         <i class="fa fa-angle-down"></i>
                                                                     </small>
                                                                 </div>
                                                             </div>
-                                                        </div>
+                                                                }
+                                                        @*</div>
                                                     </div>
                                                 </li>
                                                 <li class="list-group-item">
@@ -260,12 +263,12 @@
                                                                     <small class="text-success pl-2">
                                                                         <i class="fa fa-angle-up"></i>
                                                                     </small>
-                                                                </div>
+                                                                </div>*@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </li>
-                                            </ul>
+                                               @*</li>
+                                            </ul>*@
                                         </div>
                                     </div>
                                 </div>

@@ -6,11 +6,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Migrations\20191022072631_InitialCreate.cs" />
-    <Compile Remove="Migrations\20191022072631_InitialCreate.Designer.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Content Include="Views\Home\tables-regular.html" />
   </ItemGroup>
 
