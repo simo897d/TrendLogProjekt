@@ -26,8 +26,6 @@ namespace TrendLogProjekt.Models
             ) ;
                 context.topAuthors.AddRange(
                     new TopAuthor {
-
-                        ID = 0,
                         Name = "Hans Kristiansen",
                         Occupation = "Web Dev",
                         Money = 100,
@@ -37,8 +35,6 @@ namespace TrendLogProjekt.Models
 
                     },
                     new TopAuthor {
-
-                        ID = 1,
                         Name = "Peter Thomsen",
                         Occupation = "Web Dev",
                         Money = 150,
@@ -48,8 +44,6 @@ namespace TrendLogProjekt.Models
 
                     },
                     new TopAuthor {
-
-                        ID = 2,
                         Name = "Mogens Mogensen",
                         Occupation = "Web Dev",
                         Money = 34,
@@ -59,8 +53,6 @@ namespace TrendLogProjekt.Models
 
                     },
                     new TopAuthor {
-
-                        ID = 3,
                         Name = "Mads Madsen",
                         Occupation = "Web Dev",
                         Money = 166,
@@ -70,8 +62,6 @@ namespace TrendLogProjekt.Models
 
                     },
                     new TopAuthor {
-
-                        ID = 4,
                         Name = "Kurt Knudsen",
                         Occupation = "Web Dev",
                         Money = 178,
@@ -81,8 +71,6 @@ namespace TrendLogProjekt.Models
 
                     },
                     new TopAuthor {
-
-                        ID = 5,
                         Name = "Kirsten Lysgaard",
                         Occupation = "Web Dev",
                         Money = 342,
@@ -92,8 +80,6 @@ namespace TrendLogProjekt.Models
 
                     },
                     new TopAuthor {
-
-                        ID = 6,
                         Name = "Peter Petersen",
                         Occupation = "Web Dev",
                         Money = 233,
@@ -103,8 +89,6 @@ namespace TrendLogProjekt.Models
 
                     },
                     new TopAuthor {
-
-                        ID = 7,
                         Name = "Kristian Kjeldsen",
                         Occupation = "Web Dev",
                         Money = 100,
@@ -114,8 +98,6 @@ namespace TrendLogProjekt.Models
 
                     },
                     new TopAuthor {
-
-                        ID = 8,
                         Name = "Søren Sørensen",
                         Occupation = "Web Dev",
                         Money = 623,
@@ -125,8 +107,6 @@ namespace TrendLogProjekt.Models
 
                     },
                     new TopAuthor {
-
-                        ID = 9,
                         Name = "Thomas Thomasen",
                         Occupation = "Web Dev",
                         Money = 243,
