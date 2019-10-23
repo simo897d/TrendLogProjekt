@@ -15,5 +15,6 @@ namespace TrendLogProjekt.Data
         }
         public DbSet<BandwithReports> bandwithReports { get; set; }
         public DbSet<TopAuthor> topAuthors { get; set; }
+        public DbSet<Channel> channels { get; set; }
     }
 }

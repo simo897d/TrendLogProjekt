@@ -9,41 +9,49 @@ using TrendLogProjekt.Data;
 using Microsoft.EntityFrameworkCore;
 using System.Net;
 using System.Text;
+using System.Web;
+using Newtonsoft.Json.Linq;
+using Nancy.Json;
+using System.Buffers.Text;
+using System.IO;
+using Newtonsoft.Json;
 
 namespace TrendLogProjekt.Controllers
 {
-    public class HomeController : Controller {
+    public class HomeController : Controller
+    {
         private readonly DataContext db;
         public byte[] arr;
-        string converted;
-        public HomeController(DataContext _db){
+        public string converted;
+        public HomeController(DataContext _db) {
             db = _db;
-            }
-        
-        public IActionResult Index() 
-        {
+        }
+
+        public IActionResult Index() {
             using (WebClient client = new WebClient()) {
                 client.Headers["User-Agent"] =
                 "Mozilla/4.0 (Compatible; Windows NT 5.1; MSIE 6.0)";
                 arr = client.DownloadData("https://api.trendlog.io/V1/channels/20/feeds/p1_cnt?apikey=GUZ5VO4I39GM");
             }
-            
 
+            var serialiser = new JavaScriptSerializer();
+            converted = Encoding.UTF8.GetString(arr);
+            Channel root = JsonConvert.DeserializeObject<Channel>(converted);
 
-                List<TopAuthor> topAuthors = new List<TopAuthor>();
-                foreach(TopAuthor ta in db.topAuthors) {
-                topAuthors.Add(ta);                  
-                };
+            List <TopAuthor> topAuthors = new List<TopAuthor>();
+            foreach (TopAuthor ta in db.topAuthors) {
+                topAuthors.Add(ta);
+            };
             List<BandwithReports> bandwithReports = new List<BandwithReports>();
-            foreach(BandwithReports br in db.bandwithReports) {
+            foreach (BandwithReports br in db.bandwithReports) {
                 bandwithReports.Add(br);
             }
             IndexModel indexModel = new IndexModel {
                 BandWithReports = bandwithReports,
                 TopAuthors = topAuthors
             };
-           
-           
+
+
             return View(indexModel);
         }
         //public IActionResult Privacy() {
@@ -51,7 +59,8 @@ namespace TrendLogProjekt.Controllers
         //}
 
 
-            
+           
+
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error() {
