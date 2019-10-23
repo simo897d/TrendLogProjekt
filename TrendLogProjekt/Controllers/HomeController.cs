@@ -36,7 +36,7 @@ namespace TrendLogProjekt.Controllers
 
             var serialiser = new JavaScriptSerializer();
             converted = Encoding.UTF8.GetString(arr);
-            Channel root = JsonConvert.DeserializeObject<Channel>(converted);
+            ChannelRootobject channels = JsonConvert.DeserializeObject<ChannelRootobject>(converted);
 
             List <TopAuthor> topAuthors = new List<TopAuthor>();
             foreach (TopAuthor ta in db.topAuthors) {
