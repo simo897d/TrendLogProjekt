@@ -12,7 +12,7 @@ namespace TrendLogProjekt.Models
     {
         public static void InitializeData(IServiceProvider serviceProvider) {
             using (var context = new DataContext(serviceProvider.GetRequiredService<DbContextOptions<DataContext>>())) {
-                if (context.bandwithReports.Any() && context.topAuthors.Any()) {
+                if (context.topAuthors.Any()) {
                     return;
                 }
                 

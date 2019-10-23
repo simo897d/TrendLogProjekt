@@ -7,17 +7,29 @@ using Microsoft.AspNetCore.Mvc;
 using TrendLogProjekt.Models;
 using TrendLogProjekt.Data;
 using Microsoft.EntityFrameworkCore;
+using System.Net;
+using System.Text;
 
 namespace TrendLogProjekt.Controllers
 {
     public class HomeController : Controller {
         private readonly DataContext db;
+        public byte[] arr;
+        string converted;
         public HomeController(DataContext _db){
             db = _db;
             }
+        
         public IActionResult Index() 
         {
+            using (WebClient client = new WebClient()) {
+                client.Headers["User-Agent"] =
+                "Mozilla/4.0 (Compatible; Windows NT 5.1; MSIE 6.0)";
+                arr = client.DownloadData("https://api.trendlog.io/V1/channels/20/feeds/p1_cnt?apikey=GUZ5VO4I39GM");
+            }
             
+
+
                 List<TopAuthor> topAuthors = new List<TopAuthor>();
                 foreach(TopAuthor ta in db.topAuthors) {
                 topAuthors.Add(ta);                  
@@ -30,12 +42,16 @@ namespace TrendLogProjekt.Controllers
                 BandWithReports = bandwithReports,
                 TopAuthors = topAuthors
             };
-
+           
+           
             return View(indexModel);
         }
         //public IActionResult Privacy() {
         //    return View();
         //}
+
+
+            
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error() {
