@@ -10,11 +10,11 @@ namespace TrendLogProjekt.Data
 {
     public class DataContext : DbContext
     {
+        public DbSet<BandwithReports> bandwithReports { get; set; }
+        public DbSet<TopAuthor> topAuthors { get; set; }
+        public DbSet<ChannelRootobject> channels { get; set; }
         public DataContext(DbContextOptions<DataContext> options) : base(options) {
 
         }
-        public DbSet<BandwithReports> bandwithReports { get; set; }
-        public DbSet<TopAuthor> topAuthors { get; set; }
-        public DbSet<Channel> channels { get; set; }
     }
 }
