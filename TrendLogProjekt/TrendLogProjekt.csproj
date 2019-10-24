@@ -6,6 +6,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Migrations\20191022172830_FinalMigration.cs" />
+    <Compile Remove="Migrations\20191022172830_FinalMigration.Designer.cs" />
+    <Compile Remove="Migrations\20191023152115_Channels.cs" />
+    <Compile Remove="Migrations\20191023152115_Channels.Designer.cs" />
+    <Compile Remove="Migrations\20191023153737_MaybeLastMigration.cs" />
+    <Compile Remove="Migrations\20191023153737_MaybeLastMigration.Designer.cs" />
+    <Compile Remove="Migrations\20191024090914_bleh.cs" />
+    <Compile Remove="Migrations\20191024090914_bleh.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Include="Views\Home\tables-regular.html" />
   </ItemGroup>
 

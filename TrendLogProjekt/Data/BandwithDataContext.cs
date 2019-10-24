@@ -16,5 +16,8 @@ namespace TrendLogProjekt.Data
         public DataContext(DbContextOptions<DataContext> options) : base(options) {
 
         }
+        //protected override void OnModelCreating(ModelBuilder modelBuilder) {
+        //    modelBuilder.Entity<Channel>().HasKey(c => new { c.channel_id,  });
+        //}
     }
 }

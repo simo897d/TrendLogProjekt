@@ -21,8 +21,7 @@ namespace TrendLogProjekt.Migrations
 
             modelBuilder.Entity("TrendLogProjekt.Models.AlarmSettings", b =>
                 {
-                    b.Property<string>("email")
-                        .ValueGeneratedOnAdd();
+                    b.Property<string>("email");
 
                     b.HasKey("email");
 
@@ -50,9 +49,7 @@ namespace TrendLogProjekt.Migrations
 
             modelBuilder.Entity("TrendLogProjekt.Models.Channel", b =>
                 {
-                    b.Property<int>("channel_id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                    b.Property<int>("channel_id");
 
                     b.Property<string>("alarmsettingsemail");
 
@@ -102,9 +99,7 @@ namespace TrendLogProjekt.Migrations
 
             modelBuilder.Entity("TrendLogProjekt.Models.Feeds", b =>
                 {
-                    b.Property<int>("feed_id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                    b.Property<int>("feed_id");
 
                     b.Property<int>("alarm");
 
@@ -129,9 +124,7 @@ namespace TrendLogProjekt.Migrations
 
             modelBuilder.Entity("TrendLogProjekt.Models.Points", b =>
                 {
-                    b.Property<int>("pointid")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                    b.Property<int>("pointid");
 
                     b.Property<int?>("Feedsfeed_id");
 

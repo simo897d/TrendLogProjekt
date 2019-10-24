@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace TrendLogProjekt.Migrations
 {
-    public partial class Channels : Migration
+    public partial class FuckMitLiv : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -20,11 +20,44 @@ namespace TrendLogProjekt.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "bandwithReports",
+                columns: table => new
+                {
+                    ID = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    ServerAllocation = table.Column<int>(nullable: false),
+                    GeneratedLeads = table.Column<int>(nullable: false),
+                    SubmittedTickets = table.Column<int>(nullable: false),
+                    GeneratedLeads2 = table.Column<int>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_bandwithReports", x => x.ID);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "topAuthors",
+                columns: table => new
+                {
+                    AuthorId = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    Name = table.Column<string>(nullable: true),
+                    Occupation = table.Column<string>(nullable: true),
+                    Location = table.Column<string>(nullable: true),
+                    Status = table.Column<string>(nullable: true),
+                    Money = table.Column<int>(nullable: false),
+                    ImageLocation = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_topAuthors", x => x.AuthorId);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Channel",
                 columns: table => new
                 {
-                    channel_id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    channel_id = table.Column<int>(nullable: false),
                     name = table.Column<string>(nullable: true),
                     description = table.Column<string>(nullable: true),
                     timezone = table.Column<DateTime>(nullable: false),
@@ -72,8 +105,7 @@ namespace TrendLogProjekt.Migrations
                 name: "Feeds",
                 columns: table => new
                 {
-                    feed_id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    feed_id = table.Column<int>(nullable: false),
                     name = table.Column<string>(nullable: true),
                     label = table.Column<string>(nullable: true),
                     scale = table.Column<int>(nullable: false),
@@ -97,8 +129,7 @@ namespace TrendLogProjekt.Migrations
                 name: "Points",
                 columns: table => new
                 {
-                    pointid = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    pointid = table.Column<int>(nullable: false),
                     timestamp = table.Column<DateTime>(nullable: false),
                     value = table.Column<int>(nullable: false),
                     Feedsfeed_id = table.Column<int>(nullable: true)
@@ -138,10 +169,16 @@ namespace TrendLogProjekt.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
+                name: "bandwithReports");
+
+            migrationBuilder.DropTable(
                 name: "channels");
 
             migrationBuilder.DropTable(
                 name: "Points");
+
+            migrationBuilder.DropTable(
+                name: "topAuthors");
 
             migrationBuilder.DropTable(
                 name: "Feeds");

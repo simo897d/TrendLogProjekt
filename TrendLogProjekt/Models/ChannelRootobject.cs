@@ -12,7 +12,7 @@ namespace TrendLogProjekt.Models {
         public Channel channel { get; set; }
     }
     public class Channel {
-        [DatabaseGeneratedAttribute(DatabaseGeneratedOption.None), Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.None), Key]
         public int channel_id { get; set; }
 
         public string name { get; set; }
@@ -31,7 +31,7 @@ namespace TrendLogProjekt.Models {
         public virtual ICollection<Feeds> feeds { get; set; }
     }
     public class Feeds {
-        [Key]
+        [DatabaseGeneratedAttribute(DatabaseGeneratedOption.None), Key]
         public int feed_id { get; set; }
         public string name { get; set; }
         public string label { get; set; }
@@ -39,17 +39,17 @@ namespace TrendLogProjekt.Models {
         public int alarm { get; set; }
         public int enable_alarm { get; set; }
         public string alarm_settings { get; set; }
-        public Points[] points { get; set; }
+        public ICollection<Points> points { get; set; }
     }
     public class Points {
-        [Key]
+        [DatabaseGeneratedAttribute(DatabaseGeneratedOption.None), Key]
         public int pointid { get; set; }
 
         public DateTime timestamp { get; set; }
         public int value { get; set; }
     }
     public class AlarmSettings {
-        [Key]
+        [DatabaseGeneratedAttribute(DatabaseGeneratedOption.None), Key]
         public string email { get; set; }
 
     }
