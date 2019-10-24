@@ -12,6 +12,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
 using TrendLogProjekt.Data;
 using Swashbuckle.AspNetCore.Swagger;
+using TrendLogProjekt.Models;
 
 namespace TrendLogProjekt
 {
@@ -35,7 +36,10 @@ namespace TrendLogProjekt
             options.UseSqlServer(Configuration.GetConnectionString("DbConnection")));
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
-        }
+
+    //services.AddDbContext<ChannelDataContext>(options =>
+    //        options.UseSqlServer(Configuration.GetConnectionString("ChannelDataContext")));
+       }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env) {

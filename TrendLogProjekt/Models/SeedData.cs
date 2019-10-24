@@ -33,7 +33,6 @@ namespace TrendLogProjekt.Models
                 converted = Encoding.UTF8.GetString(arr);
                 ChannelRootobject channels = JsonConvert.DeserializeObject<ChannelRootobject>(converted);
 
-                //channels.channel.feeds = new List<Feeds>();
                // context.channels.Add(channels);
 
                 context.bandwithReports.AddRange(
